@@ -1,0 +1,156 @@
+/* ============================================================
+   HERO SECTION — CLEAN TAILWIND CSS USING @apply
+   WITH HUMAN-FRIENDLY COMMENTS FOR EVERY STYLE
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   MAIN WRAPPER (full-screen background with gradient + effects)
+   ------------------------------------------------------------ */
+.hero-wrapper {
+  /* Takes at least full screen height */
+  @apply min-h-screen;
+  /* Beautiful dark diagonal gradient */
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-black;
+  /* Allows absolutely positioned glow elements */
+  @apply relative;
+  /* Prevent glowing blobs from overflowing page edges */
+  @apply overflow-hidden;
+}
+
+/* ------------------------------------------------------------
+   GLOWING BACKGROUND EFFECTS (decorative visuals)
+   ------------------------------------------------------------ */
+.hero-glow {
+  /* Stretch to cover entire wrapper */
+  @apply absolute inset-0;
+  /* Avoids mouse pointer interactions (pure decoration) */
+  @apply pointer-events-none;
+}
+
+/* Indigo glow (top-left) */
+.glow-1 {
+  /* Positioned partly outside screen for soft effect */
+  @apply absolute -top-20 -left-20;
+  /* Size of glow circle */
+  @apply w-72 h-72;
+  /* Color with 20% opacity */
+  @apply bg-indigo-600/20;
+  /* Makes it circular */
+  @apply rounded-full;
+  /* Heavy blur → glowy look */
+  @apply blur-3xl;
+}
+
+/* Purple glow (top-right) */
+.glow-2 {
+  @apply absolute top-40 -right-20;
+  @apply w-80 h-80;
+  @apply bg-purple-600/20;
+  @apply rounded-full;
+  @apply blur-3xl;
+}
+
+/* Pink glow (bottom center) */
+.glow-3 {
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2;
+  @apply w-96 h-96;
+  @apply bg-pink-500/10;
+  @apply rounded-full;
+  @apply blur-3xl;
+}
+
+/* ------------------------------------------------------------
+   HERO SECTION CONTENT SPACING
+   ------------------------------------------------------------ */
+.hero-section {
+  /* Pushes content down below the fixed header */
+  @apply relative pt-40;
+  /* Adds breathing room at bottom */
+  @apply pb-32;
+  /* Page side padding */
+  @apply px-6;
+}
+
+.hero-inner {
+  /* Centers content */
+  @apply max-w-6xl mx-auto;
+  /* Everything inside spaced vertically */
+  @apply text-center space-y-8;
+}
+
+/* ------------------------------------------------------------
+   BADGE ABOVE MAIN HEADING
+   ------------------------------------------------------------ */
+.hero-badge {
+  @apply inline-block px-5 py-1.5;
+  /* Rounded pill shape */
+  @apply rounded-full;
+  /* Transparent frosted look */
+  @apply bg-white/10 border border-white/20 backdrop-blur-md;
+  /* Light text styling */
+  @apply text-gray-300 text-sm tracking-wide;
+}
+
+/* ------------------------------------------------------------
+   MAIN HEADING (big title)
+   ------------------------------------------------------------ */
+.hero-title {
+  /* Huge text */
+  @apply text-5xl md:text-6xl font-extrabold;
+  /* White color, slight shadow for depth */
+  @apply text-white leading-tight drop-shadow-lg;
+}
+
+/* Gradient text */
+.hero-title-gradient {
+  /* Makes each word sit on its own line */
+  @apply block;
+  /* Text becomes transparent so gradient shows through */
+  @apply text-transparent bg-clip-text;
+  /* Beautiful purple-to-pink gradient */
+  @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400;
+}
+
+/* ------------------------------------------------------------
+   SUBTEXT BELOW TITLE
+   ------------------------------------------------------------ */
+.hero-subtext {
+  /* Medium-large text size */
+  @apply text-xl;
+  /* Softer gray text */
+  @apply text-gray-300;
+  /* Nicely centered */
+  @apply max-w-2xl mx-auto;
+  /* Good readability */
+  @apply leading-relaxed;
+}
+
+/* ------------------------------------------------------------
+   BUTTONS (Primary + Secondary)
+   ------------------------------------------------------------ */
+
+/* Primary button (bold, colorful, eye-catching) */
+.hero-btn-primary {
+  @apply px-8 py-3 rounded-xl;
+  /* Gradient background */
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600;
+  /* Strong white text */
+  @apply text-white font-semibold;
+  /* Shadow for elevation */
+  @apply shadow-lg;
+  /* Hover animation: glow + scale */
+  @apply hover:shadow-purple-500/30 hover:scale-105;
+  @apply transition-all duration-300;
+}
+
+/* Secondary button (glassmorphism) */
+.hero-btn-secondary {
+  @apply px-8 py-3 rounded-xl;
+  /* Glass border + transparency */
+  @apply border border-white/20 backdrop-blur-md;
+  /* Soft gray text */
+  @apply text-gray-300 font-semibold;
+  /* Hover animations */
+  @apply hover:bg-white/10 hover:scale-105;
+  @apply transition-all duration-300;
+}

@@ -1,0 +1,111 @@
+/* ============================================================
+   HEADER COMPONENT — Tailwind CSS using @apply
+   With human-friendly explanations for every class
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   MAIN HEADER WRAPPER
+   ------------------------------------------------------------ */
+
+.header-wrapper {
+  /* Stays fixed at top of screen when scrolling */
+  @apply fixed top-0 left-0 w-full;
+
+  /* Renders above all other content */
+  @apply z-50;
+
+  /* Smooth color + layout transitions on scroll */
+  @apply transition-colors duration-300 ease-out;
+
+  /* Apply glass effect */
+  @apply backdrop-blur-xl;
+}
+
+/* HEADER (default state before scroll) */
+.header-default {
+  /* Slight transparent dark background */
+  @apply bg-gray-900/70;
+
+  /* Larger padding → taller header before scroll */
+  @apply py-6;
+}
+
+/* HEADER (scrolled state) */
+.header-scrolled {
+  /* More opaque background when scrolling */
+  @apply bg-gray-900/90;
+
+  /* Subtle modern elevated shadow */
+  @apply shadow-[0_8px_30px_rgb(0,0,0,0.12)];
+
+  /* Slight shrink of header height */
+  @apply py-4;
+
+  /* Soft border bottom for sharp look */
+  @apply border-b border-gray-800/40;
+}
+
+/* Gradient bottom border glow */
+.header-bottom-glow {
+  @apply absolute bottom-0 left-0 w-full h-[1px]
+         bg-gradient-to-r from-indigo-500/40 to-pink-500/40;
+}
+
+
+/* ------------------------------------------------------------
+   HEADER INNER CONTENT LAYOUT
+   ------------------------------------------------------------ */
+.header-inner {
+  /* Centers content */
+  @apply max-w-6xl mx-auto px-6;
+
+  /* Horizontal layout of logo + menu */
+  @apply flex items-center justify-between;
+}
+
+
+/* ------------------------------------------------------------
+   LOGO STYLING
+   ------------------------------------------------------------ */
+.header-logo {
+  /* Large bold text */
+  @apply text-2xl font-bold;
+
+  /* Gradient text (indigo → purple → pink) */
+  @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
+
+  /* Make gradient visible inside text */
+  @apply bg-clip-text text-transparent;
+
+  /* Smooth hover color transitions */
+  @apply transition-all duration-300;
+
+  /* Prevent accidental text highlight on click */
+  @apply select-none;
+}
+
+.header-logo:hover {
+  /* Brighter hover effect */
+  @apply from-indigo-400 via-purple-400 to-pink-400;
+}
+
+
+/* ------------------------------------------------------------
+   MENU WRAPPER (You will add more items later)
+   ------------------------------------------------------------ */
+.header-menu {
+  /* Horizontal space between nav items */
+  @apply flex gap-8;
+
+  /* Text styling */
+  @apply text-gray-300 font-medium;
+}
+
+.header-menu-item {
+  /* Smooth hover transition */
+  @apply transition-colors duration-200;
+
+  /* Hover color */
+  @apply hover:text-indigo-400 cursor-pointer;
+}
