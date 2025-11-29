@@ -7,5 +7,5 @@ export const dropletWordsdict = {
 }
 
 export const dropletWords = ["Flutter", "Fire base", "Generator-monitoring APP", "Appraisal App","Quiz APP", "VS Code",
-          "Old-Jetzerp", "VPKR Solutions", "odoo", "python", "pycharm", "Ubuntu", "Angela",
-           "Apex", "AWS", "lambda", "Skillfulsense", "hyrsense", "agora", "Steve-voice-tutor", "Steve-interviewer"]
+          "odoo-14","odoo-migration","postgresql","oracle-db","sqlAlchemy", "python", "pycharm", "Ubuntu", "Angela",
+           "Apex", "AWS", "lambda","EC2","S3","Route53","API Gateway", "Skillfulsense", "hyrsense", "agora", "Steve-voice-tutor", "Steve-interviewer"]

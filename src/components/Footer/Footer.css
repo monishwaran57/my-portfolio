@@ -1,0 +1,31 @@
+.footer-container {
+  background: linear-gradient(180deg, #0b0b0b 0%, #0d0d0d 100%);
+}
+
+/* Title text */
+.footer-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+/* Description text */
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d1d1d1;
+}
+
+/* Links styling */
+.footer-link {
+  font-size: 1rem;
+  color: #c7c7c7;
+  transition: 0.25s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+}
