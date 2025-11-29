@@ -1,0 +1,57 @@
+/* ============================================================
+   SKILLS MARQUEE — Infinite horizontal scrolling animation
+   Fully documented for understanding
+   ============================================================ */
+
+/* Wrapper takes full width */
+.skills-wrapper {
+  /* Spacing above */
+  @apply w-full py-6;
+
+  /* Dark translucent bg to match hero */
+  @apply bg-black/20 backdrop-blur-md border-t border-white/10;
+
+  /* Positioned naturally inside layout */
+  @apply relative overflow-hidden;
+}
+
+/* Marquee container */
+.skills-marquee {
+  /* Ensures smooth overflow scroll */
+  @apply w-full overflow-hidden;
+}
+
+/* Track = actual moving row */
+.skills-track {
+  /* Horizontal layout of items */
+  @apply flex gap-10 whitespace-nowrap;
+
+  /* Infinite animation (defined below) */
+  animation: marquee-scroll 16s linear infinite;
+}
+
+/* Each skill badge */
+.skill-item {
+  @apply text-gray-300 text-lg font-semibold tracking-wide;
+
+  /* Visual badge style */
+  @apply px-6 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md;
+
+  /* Soft glow on hover */
+  @apply hover:text-white hover:border-white/40 transition-colors duration-300;
+}
+
+/* ------------------------------------------------------------
+   Infinite Scroll Animation
+   Moves the track slightly left forever
+   ------------------------------------------------------------ */
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Move entire skill track left by 50% (because duplicated) */
+    transform: translateX(-50%);
+  }
+}

@@ -154,3 +154,145 @@
   @apply hover:bg-white/10 hover:scale-105;
   @apply transition-all duration-300;
 }
+
+/* ============================================================
+   HERO SECTION — Two Column Professional Layout
+   ============================================================ */
+
+/* Main layout container for hero text + image */
+.hero-layout-container {
+  @apply relative max-w-6xl mx-auto px-6 pt-40 pb-32 
+         grid grid-cols-1 md:grid-cols-2 gap-16 items-center;
+}
+
+/* ------------------------------------------------------------
+   LEFT SIDE (Text content)
+   ------------------------------------------------------------ */
+.hero-left {
+  @apply space-y-8;
+}
+
+/* Big Typing Role */
+.hero-title-left {
+  @apply text-4xl md:text-5xl font-extrabold text-white leading-tight;
+}
+
+/* Typing text styling (color + shadow) */
+.hero-typing-text {
+  @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 
+         bg-clip-text text-transparent drop-shadow-lg;
+}
+
+/* Professional summary */
+.hero-summary {
+  @apply text-gray-300 text-lg leading-relaxed max-w-xl;
+}
+
+/* Resume CTA button */
+.hero-btn-resume {
+  @apply inline-block mt-4 px-8 py-3 rounded-xl font-semibold 
+         bg-gradient-to-r from-indigo-600 to-purple-600 text-white
+         shadow-lg hover:shadow-purple-500/30 hover:scale-105 
+         transition-all duration-300;
+}
+
+
+/* ============================================================
+   PROFILE IMAGE — FINAL RESPONSIVE + PREMIUM DESIGN
+   ============================================================ */
+
+/* Wrapper: handles glow, reflection, and positioning */
+.hero-picture-wrapper {
+  /* Smooth scaling + center alignment */
+  @apply relative inline-block mx-auto md:mx-0;
+
+  /* Ensures glow stays proportional on all screen sizes */
+  @apply w-64 md:w-80 lg:w-[28rem];
+}
+
+/* ------------------------------------------------------------
+   Base Image Styling
+   ------------------------------------------------------------ */
+.hero-picture {
+  /* Full responsive image size */
+  @apply w-full rounded-2xl object-cover shadow-xl;
+
+  /*
+    Responsive height:
+    - Auto on small screens to avoid distortion
+    - Larger, stable height on desktop for premium look
+  */
+  height: auto;
+  max-height: 480px;
+
+  /*
+    Duotone color filter tuned to match website theme:
+    - Slightly more purple shift
+    - Balanced saturation (not too neon)
+  */
+  filter: contrast(1.05) brightness(1.1) saturate(1.25)
+          sepia(15%) hue-rotate(260deg);
+
+  /* Smooth transitions on hover (optional) */
+  @apply transition-transform duration-500;
+}
+
+/* Subtle lift effect on hover */
+.hero-picture:hover {
+  @apply scale-[1.02];
+}
+
+
+/* ------------------------------------------------------------
+   Gradient Halo (outer glow)
+   ------------------------------------------------------------ */
+.hero-picture-wrapper::before {
+  content: "";
+  /* Full-size blur halo */
+  @apply absolute inset-0 rounded-2xl blur-3xl opacity-40;
+
+  /* Smooth gradient glow */
+  background: linear-gradient(
+    135deg,
+    rgba(99,102,241,0.8),
+    rgba(168,85,247,0.8),
+    rgba(236,72,153,0.7)
+  );
+
+  /* Glow scales better on big screens */
+  @apply md:blur-[70px] lg:blur-[100px];
+}
+
+
+/* ------------------------------------------------------------
+   Top Reflection Shine
+   ------------------------------------------------------------ */
+.hero-picture-wrapper::after {
+  content: "";
+
+  /*
+    Polished glass reflection effect:
+    - Only at top
+    - Subtle and premium
+  */
+  @apply absolute top-0 left-0 w-full rounded-t-2xl;
+
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.25),
+    rgba(255,255,255,0.0)
+  );
+
+  mix-blend-mode: screen;
+}
+
+
+/* ------------------------------------------------------------
+   Optional Soft Vignette Mask (better blending)
+   ------------------------------------------------------------ */
+
+.hero-picture {
+  mask-image: radial-gradient(circle at center, white 65%, transparent 100%);
+}
+
