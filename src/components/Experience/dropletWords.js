@@ -6,6 +6,6 @@ export const dropletWordsdict = {
     software_engineer: ["Steve-voice-tutor", "Steve-interviewer", "sivaranjani", "monica beluji"],
 }
 
-export const dropletWords = ["Flutter", "Fire base", "Generator-monitoring APP", "Appraisal App","Quiz APP", "VS Code",
-          "odoo-14","odoo-migration","postgresql","oracle-db","sqlAlchemy", "python", "pycharm", "Ubuntu", "Angela",
-           "Apex", "AWS", "lambda","EC2","S3","Route53","API Gateway", "Skillfulsense", "hyrsense", "agora", "Steve-voice-tutor", "Steve-interviewer"]
+export const dropletWords = ["Flutter", "Fire base", "Generator-monitoring APP", "Appraisal App","Quiz APP", "VS Code","pandas", "numpy", "matplotlib",
+          "odoo-14","odoo-migration","postgresql","oracle-db","sqlAlchemy", "python", "pycharm", "Ubuntu", "Angela","Linux", "Ubuntu","HTML","React","css","DLRflow",
+           "Apex", "AWS", "lambda","EC2","S3","Route53","API Gateway","ECS", "ECR", "Github", "Git", "Skillfulsense", "hyrsense", "agora", "Steve-voice-tutor", "Steve-interviewer"]
