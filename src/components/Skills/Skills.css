@@ -1,57 +1,68 @@
 /* ============================================================
-   SKILLS MARQUEE — Infinite horizontal scrolling animation
-   Fully documented for understanding
+   SKILLS MARQUEE — ICON + TEXT VERSION
    ============================================================ */
 
-/* Wrapper takes full width */
+/* Main wrapper */
 .skills-wrapper {
-  /* Spacing above */
-  @apply w-full py-6;
-
-  /* Dark translucent bg to match hero */
-  @apply bg-black/20 backdrop-blur-md border-t border-white/10;
-
-  /* Positioned naturally inside layout */
-  @apply relative overflow-hidden;
+  @apply w-full py-8 bg-black/30 backdrop-blur-xl border-t border-white/10;
+  @apply overflow-hidden relative;
 }
 
-/* Marquee container */
+/* Marquee outer-control */
 .skills-marquee {
-  /* Ensures smooth overflow scroll */
   @apply w-full overflow-hidden;
 }
 
-/* Track = actual moving row */
+/* Track that scrolls infinitely */
+/* Track that scrolls infinitely */
 .skills-track {
-  /* Horizontal layout of items */
-  @apply flex gap-10 whitespace-nowrap;
-
-  /* Infinite animation (defined below) */
-  animation: marquee-scroll 16s linear infinite;
+  @apply flex whitespace-nowrap items-center gap-10;
+  animation: marquee-scroll 20s linear infinite;
 }
 
-/* Each skill badge */
-.skill-item {
+/* Single skill card container */
+.skill-card {
+  @apply inline-flex items-center gap-3;
+
+  /* FIX: Prevent text clipping */
+  @apply min-w-max;
+
+  @apply px-6 py-3 rounded-xl bg-white/5 border border-white/10;
+  @apply backdrop-blur-md shadow-md;
+  @apply hover:bg-white/10 transition-all duration-300;
+}
+
+
+
+/* Skill with image layout */
+.skill-with-image {
+  @apply flex items-center gap-3;
+}
+
+/* Skill icon */
+.skill-icon {
+  @apply w-8 h-8 object-contain rounded-md;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.3));
+}
+
+/* Text beside icon */
+.skill-text {
+  @apply text-gray-200 text-lg font-semibold;
+}
+
+/* Text-only pill when no icon provided */
+.skill-text-only {
   @apply text-gray-300 text-lg font-semibold tracking-wide;
-
-  /* Visual badge style */
-  @apply px-6 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md;
-
-  /* Soft glow on hover */
-  @apply hover:text-white hover:border-white/40 transition-colors duration-300;
+  @apply px-2;
 }
 
-/* ------------------------------------------------------------
-   Infinite Scroll Animation
-   Moves the track slightly left forever
-   ------------------------------------------------------------ */
-
+/* Infinite marquee animation */
 @keyframes marquee-scroll {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    /* Move entire skill track left by 50% (because duplicated) */
-    transform: translateX(-50%);
+  to {
+    /* move left by 50% (because duplicated) */
+    transform: translateX(-100%);
   }
 }

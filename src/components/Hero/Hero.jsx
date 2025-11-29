@@ -1,6 +1,8 @@
 import "./Hero.css";
 import { TypeAnimation } from "react-type-animation";
 import Skills from "../Skills/Skills";
+import heroPic from "../../assets/hero-pic.png";
+
 
 
 export default function Hero() {
@@ -65,7 +67,7 @@ export default function Hero() {
 
         {/* RIGHT SIDE — Profile Image */}
         <div className="hero-picture-wrapper">
-          <img src={IMAGE_URL} alt="Monishwaran" className="hero-picture" />
+          <img src={heroPic} alt="Monishwaran" className="hero-picture" />
         </div>
       </section>
 

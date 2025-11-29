@@ -1,0 +1,65 @@
+/* ============================================================
+   EXPERIENCE TIMELINE SECTION — Clean, Modern, Premium UI
+   ============================================================ */
+
+.experience-wrapper {
+  @apply relative w-full py-20 px-6 bg-gradient-to-b from-black via-gray-900 to-black;
+}
+
+.experience-title {
+  @apply text-center text-4xl md:text-5xl font-extrabold text-white mb-16;
+  @apply bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent;
+}
+
+.experience-timeline {
+  @apply max-w-5xl mx-auto space-y-16 relative;
+}
+
+/* Timeline line + dot */
+.experience-line-container {
+  @apply absolute left-0 top-0 h-full flex flex-col items-center;
+}
+
+.experience-line {
+  @apply w-[3px] bg-gradient-to-b from-indigo-500 to-pink-500 flex-1 opacity-30;
+}
+
+.experience-dot {
+  @apply w-5 h-5 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 shadow-lg;
+}
+
+/* Experience card */
+.experience-card {
+  @apply relative pl-12 md:pl-20;
+}
+
+.experience-content {
+  @apply bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-8 shadow-xl;
+  @apply hover:bg-white/10 transition-all duration-300;
+}
+
+/* Company image */
+.experience-image {
+  @apply w-14 h-14 object-contain rounded-xl mb-5;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+/* Role */
+.experience-role {
+  @apply text-2xl font-bold text-white mb-1;
+}
+
+/* Company + Location */
+.experience-company {
+  @apply text-gray-300 text-lg;
+}
+
+/* Period */
+.experience-period {
+  @apply text-gray-400 text-sm mb-4;
+}
+
+/* Tasks */
+.experience-tasks {
+  @apply list-disc ml-6 space-y-2 text-gray-300 leading-relaxed;
+}
